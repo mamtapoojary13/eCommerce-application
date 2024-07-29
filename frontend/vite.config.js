@@ -7,8 +7,8 @@ export default defineConfig({
   server: {
     // proxy requests prefixed '/api' and '/uploads'
     proxy: {
-      "/api": "https://ecommerce-application-5wrq.onrender.com",
-      "/uploads": "https://ecommerce-application-5wrq.onrender.com",
+      "/api": "http://localhost:5000",
+      "/uploads": "http://localhost:5000",
     },
   },
 });
