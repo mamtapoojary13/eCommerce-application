@@ -18,6 +18,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../dist", // Adjust this path to specify where you want the build output to go
+    outDir: "dist",
   },
 });
