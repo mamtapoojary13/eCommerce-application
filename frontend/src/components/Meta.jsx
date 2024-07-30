@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
 import { Helmet } from "react-helmet-async";
 
-export default function Meta({ title, description, keywords }) {
+function Meta({
+  title = "Welcome to MyShop",
+  description = "We sell the best products for cheap",
+  keywords = "electronics, buy electronics, cheap electronics",
+}) {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keyword" content={keywords} />
+      <meta name="keywords" content={keywords} />
     </Helmet>
   );
 }
 
-Meta.defaultProps = {
-  title: "Welcome To ProShop",
-  description: "We sell the best products for cheap",
-  keywords: "electronics, buy electronics, cheap electroincs",
-};
+export default Meta;

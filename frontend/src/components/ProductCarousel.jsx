@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -30,24 +31,10 @@ export default function ProductCarousel() {
             padding: "0",
           }}
         >
-          {dots.map((dot, index) => (
-            <li
-              key={index}
-              style={{
-                width: "10px",
-                height: "2px",
-                margin: "0 3px",
-                background: "black",
-                borderRadius: "1px",
-              }}
-            >
-              {dot}
-            </li>
-          ))}
+          {dots}
         </ul>
       </div>
     ),
-    // eslint-disable-next-line no-unused-vars
     customPaging: (i) => (
       <div style={{ width: "10px", height: "2px", background: "black" }} />
     ),
@@ -73,8 +60,7 @@ export default function ProductCarousel() {
                   alt={product.name}
                   className="w-1/2 h-full object-cover"
                 />
-                <div className="w-1/2 h-full bg-gray-500"></div>{" "}
-                {/* Gray half */}
+                <div className="w-1/2 h-full bg-gray-500"></div>
               </div>
               <div className="carousel-caption absolute w-full left-0 right-0 bottom-0 bg-black bg-opacity-50 text-white p-4">
                 <h2 className="text-right">
