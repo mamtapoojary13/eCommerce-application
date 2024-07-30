@@ -2,6 +2,7 @@ import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 dotenv.config();
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
@@ -14,6 +15,12 @@ const port = process.env.PORT || 5000;
 connectDB(); //Connect to MongoDB
 
 const app = express();
+
+app.use(cors({
+  origin: 'https://ecommerce-frontend-aiva.onrender.com', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 //Body parser middleware
 app.use(express.json());
