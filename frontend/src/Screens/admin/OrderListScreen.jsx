@@ -19,7 +19,7 @@ export default function OrderListScreen() {
       ) : (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200">
-            <thead className="bg-gray-800 text-white">
+            <thead className="bg-gray-200">
               <tr>
                 <th className="px-4 py-2 border">ID</th>
                 <th className="px-4 py-2 border">USER</th>
