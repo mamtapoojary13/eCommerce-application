@@ -67,7 +67,7 @@ export default function ProductListScreen() {
         <>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white">
-              <thead>
+              <thead className="bg-gray-200">
                 <tr>
                   <th className="py-2 px-4 border-b">ID</th>
                   <th className="py-2 px-4 border-b">NAME</th>
