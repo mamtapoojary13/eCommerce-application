@@ -78,7 +78,8 @@ export default function Header() {
               <img src={logo} alt="logo" className="h-8 w-auto" />
               <span>Proshop</span>
             </Link>
-            <div className="md:hidden">
+            <div className="md:hidden flex items-center space-x-4">
+              <SearchBox />
               <button
                 onClick={toggleNavbar}
                 className="text-white focus:outline-none"
@@ -183,23 +184,75 @@ export default function Header() {
             </div>
           </div>
           <div
-            className={`md:hidden ${isOpen ? "block" : "hidden"} mt-4`}
+            className={`md:hidden ${
+              isOpen ? "block" : "hidden"
+            } mt-4 space-y-2`}
             id="navbar-content-mobile"
           >
             <Link
               to="/cart"
-              className="hover:text-gray-200 flex items-center space-x-1"
+              className=" hover:text-gray-200 flex items-center space-x-1"
+              onClick={toggleNavbar}
             >
               <FaShoppingCart />
               <span>Cart</span>
             </Link>
-            <Link
-              to="/login"
-              className="hover:text-gray-200 flex items-center space-x-1"
-            >
-              <FaUser />
-              <span>Sign In</span>
-            </Link>
+            {userInfo ? (
+              <>
+                <Link
+                  to="/profile"
+                  className=" hover:text-gray-200 flex items-center space-x-1"
+                  onClick={toggleNavbar}
+                >
+                  <FaUser />
+                  <span>Profile</span>
+                </Link>
+                <button
+                  onClick={() => {
+                    logoutHandler();
+                    toggleNavbar();
+                  }}
+                  className="w-full text-left hover:text-gray-200 flex items-center space-x-1"
+                >
+                  <FaUser />
+                  <span>Logout</span>
+                </button>
+                {userInfo.isAdmin && (
+                  <>
+                    <Link
+                      to="/admin/productlist"
+                      className=" hover:text-gray-200 flex items-center space-x-1"
+                      onClick={toggleNavbar}
+                    >
+                      <span>Products</span>
+                    </Link>
+                    <Link
+                      to="/admin/orderlist"
+                      className=" hover:text-gray-200 flex items-center space-x-1"
+                      onClick={toggleNavbar}
+                    >
+                      <span>Orders</span>
+                    </Link>
+                    <Link
+                      to="/admin/userlist"
+                      className="hover:text-gray-200 flex items-center space-x-1"
+                      onClick={toggleNavbar}
+                    >
+                      <span>Users</span>
+                    </Link>
+                  </>
+                )}
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="hover:text-gray-200 flex items-center space-x-1"
+                onClick={toggleNavbar}
+              >
+                <FaUser />
+                <span>Sign In</span>
+              </Link>
+            )}
           </div>
         </Container>
       </nav>
