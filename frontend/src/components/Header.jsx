@@ -79,7 +79,6 @@ export default function Header() {
               <span>Proshop</span>
             </Link>
             <div className="md:hidden flex items-center space-x-4">
-              <SearchBox />
               <button
                 onClick={toggleNavbar}
                 className="text-white focus:outline-none"
@@ -183,6 +182,11 @@ export default function Header() {
               )}
             </div>
           </div>
+          {isOpen && (
+            <div className="md:hidden mt-4">
+              <SearchBox />
+            </div>
+          )}
           <div
             className={`md:hidden ${
               isOpen ? "block" : "hidden"
