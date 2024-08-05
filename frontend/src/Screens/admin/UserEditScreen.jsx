@@ -56,7 +56,7 @@ export default function UserEditScreen() {
         Go Back
       </Link>
       <FormContainer>
-        <h1 className="text-4xl font-medium mb-6 text-gray-500">Edit User</h1>
+        <h1 className="text-4xl font-medium my-6 text-gray-500">Edit User</h1>
         {loadingUpdate && <Loader />}
         {isLoading ? (
           <Loader />
