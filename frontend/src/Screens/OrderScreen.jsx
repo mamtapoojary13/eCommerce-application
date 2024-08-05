@@ -98,7 +98,7 @@ export default function OrderScreen() {
     <Message variant="danger">{error.data.message}</Message>
   ) : (
     <>
-      <h1 className="text-4xl font-medium mb-6 text-gray-500">
+      <h1 className="text-2xl font-medium mb-6 text-gray-500">
         Order {order._id}
       </h1>
       <div className="flex flex-col md:flex-row">
