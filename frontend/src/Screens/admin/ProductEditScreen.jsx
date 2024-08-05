@@ -90,7 +90,7 @@ export default function ProductEditScreen() {
         Go Back
       </Link>
       <FormContainer>
-        <h1 className="text-4xl font-medium mb-6 text-gray-500">
+        <h1 className="text-4xl font-medium my-6 text-gray-500">
           Edit Product
         </h1>
         {loadingUpdate && <Loader />}
